@@ -43,14 +43,16 @@ $(document).ready(function() {
 			$(this).hide();
 
 			$("#questionText").text(chosen);
+			$('#answerText').css("visibility", "hidden");
+			$('#answerText').text(QUESTIONS[chosen])
 		}
 	});
 
 	$("#showAnswer").click(function() {
 		$(this).hide();
 		$("#getRandomQuestion").show();
+		$('#answerText').css("visibility", "visible");
 
-		$('#answerText').text(QUESTIONS[$("#questionText").text()])
 	});
 
 	$("#startSession").click(function() {
