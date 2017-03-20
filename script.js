@@ -52,6 +52,9 @@ $(document).ready(function() {
 		$(this).hide();
 		$("#getRandomQuestion").show();
 		$('#answerText').css("visibility", "visible");
+		var currAns = $("#answerText").text();
+
+		$(".answerList").append("<li>" + currAns + "</li>")
 
 	});
 
@@ -72,7 +75,14 @@ $(document).ready(function() {
 
 		$("#questionText").text("");
 		$('#answerText').text("");
+		$('.answerList').empty();
 
+	});
+
+	$(".done").click(function() {
+		$(".answerList").slideToggle();
+		$(".viewAnswersGlyph").toggleClass('glyphicon-chevron-up', 'glyphicon-chevron-down');
+		$(".viewAnswersGlyph").toggleClass('glyphicon-chevron-down', 'glyphicon-chevron-up');
 	});
 });
 
